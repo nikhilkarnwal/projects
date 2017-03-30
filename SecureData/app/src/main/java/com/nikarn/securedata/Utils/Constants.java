@@ -5,4 +5,5 @@ package com.nikarn.securedata.Utils;
  */
 
 public class Constants {
+    public static final String APPDATAFILE = "appdata.json";
 }

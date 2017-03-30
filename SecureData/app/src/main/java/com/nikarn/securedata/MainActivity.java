@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.nikarn.securedata.Utils.FragmentFactory;
+import com.nikarn.securedata.Utils.FragmentPage;
 import com.nikarn.securedata.libs.DataCipher;
 import com.nikarn.securedata.libs.UserData;
 
@@ -33,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(dataCipher.decryptData(data));
             }
         });
-        getSupportFragmentManager().beginTransaction().add
+    }
+
+    public void changeFragment(FragmentPage fragmentPage){
+        getSupportFragmentManager().
+                beginTransaction().
+                replace(R.id.fragment_container, FragmentFactory.getFragment(fragmentPage)).
+                addToBackStack(fragmentPage.name()).
+                commit();
     }
 }

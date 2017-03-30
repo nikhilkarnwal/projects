@@ -1,8 +1,14 @@
 package com.nikarn.securedata.Utils;
 
 import android.os.AsyncTask;
+import android.os.Environment;
+import android.provider.ContactsContract;
+import android.util.Log;
 
+import com.google.gson.Gson;
 import com.nikarn.securedata.Listener.DataListListener;
+import com.nikarn.securedata.Model.AppData;
+import com.nikarn.securedata.Model.DataItem;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -17,18 +23,39 @@ import java.util.ArrayList;
  */
 
 public class Utility {
-    public static void readData(DataListListener dataListListener){
-        AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+    public static void readData(final DataListListener dataListListener){
+        AsyncTask<Void, DataItem, Void> task = new AsyncTask<Void, DataItem, Void>() {
             @Override
             protected Void doInBackground(Void... voids) {
-                ArrayList<String>
+                AppData appData = readAppData();
+                for (String file :
+                        appData.mFileNames) {
+                    publishProgress(readDataFile(file));
+                }
                 return null;
+            }
+
+            @Override
+            protected void onProgressUpdate(DataItem... values) {
+                dataListListener.addData(values[0]);
             }
         };
     }
 
-    private static void readAppData(){
+    private static DataItem readDataFile(String file) {
+        Gson gson = new Gson();
+        DataItem dataItem = gson.fromJson(readAllTextFile(new File(file)), DataItem.class);
+        return dataItem;
+    }
 
+    private static AppData readAppData(){
+        Gson gson = new Gson();
+        AppData appData = gson.fromJson(readAllTextFile(getAppDataDirectory()),AppData.class);
+        return appData;
+    }
+
+    private static File getAppDataDirectory() {
+        return new File(Environment.getExternalStorageDirectory(), Constants.APPDATAFILE);
     }
 
     public static String readAllTextFile(File file) {

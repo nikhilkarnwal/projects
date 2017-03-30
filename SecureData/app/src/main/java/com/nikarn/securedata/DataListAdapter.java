@@ -23,6 +23,11 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ItemVi
     private Context mContext;
     private List<DataItem> mItemList;
 
+    public void addData(DataItem dataItem) {
+        mItemList.add(dataItem);
+        notifyItemInserted(mItemList.size()-1);
+    }
+
     class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView mHeading;
         TextView mContent;
@@ -61,7 +66,7 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ItemVi
     }
 
     private void actionOnDataItemClick(Context mContext, DataItem dataItem) {
-
+        
     }
 
 

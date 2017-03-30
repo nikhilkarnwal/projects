@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.nikarn.securedata.Listener.DataListListener;
+import com.nikarn.securedata.Model.DataItem;
+import com.nikarn.securedata.Utils.Utility;
+
 public class DataListFragment extends Fragment {
 
     public DataListFragment() {
@@ -29,13 +33,19 @@ public class DataListFragment extends Fragment {
 
         RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.list_view_data);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new DataListAdapter(getContext()));
-        init();
+        DataListAdapter dataListAdapter = new DataListAdapter(getContext());
+        recyclerView.setAdapter(dataListAdapter);
+        init(dataListAdapter);
         return root;
     }
 
-    private void init() {
-
+    private void init(final DataListAdapter dataListAdapter) {
+        Utility.readData(new DataListListener() {
+            @Override
+            public void addData(DataItem dataItem) {
+                dataListAdapter.addData(dataItem);
+            }
+        });
     }
 
 
