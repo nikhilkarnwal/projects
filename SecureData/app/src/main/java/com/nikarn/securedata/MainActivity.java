@@ -1,5 +1,6 @@
 package com.nikarn.securedata;
 
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void changeFragment(FragmentPage fragmentPage){
+    public void changeFragment(Fragment fragment, FragmentPage fragmentPage){
         getSupportFragmentManager().
                 beginTransaction().
-                replace(R.id.fragment_container, FragmentFactory.getFragment(fragmentPage)).
+                replace(R.id.fragment_container, fragment).
                 addToBackStack(fragmentPage.name()).
                 commit();
     }

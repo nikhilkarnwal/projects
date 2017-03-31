@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nikarn.securedata.Listener.onDataListClickListener;
 import com.nikarn.securedata.Model.DataItem;
 
 import java.util.ArrayList;
@@ -39,7 +40,7 @@ public class DataListAdapter extends RecyclerView.Adapter<DataListAdapter.ItemVi
         }
     }
 
-    public DataListAdapter(Context context) {
+    public DataListAdapter(Context context, onDataListClickListener onDataListClickListener) {
         this.mContext = context;
         mItemList = items;
     }

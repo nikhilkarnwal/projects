@@ -6,4 +6,5 @@ package com.nikarn.securedata.Utils;
 
 public class Constants {
     public static final String APPDATAFILE = "appdata.json";
+    public static final String DATAITEMPOSITION = "dataitemposition";
 }
