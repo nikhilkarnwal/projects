@@ -12,7 +12,7 @@ from keras.callbacks import ModelCheckpoint
 import numpy as np
 import matplotlib.pyplot as plt
 
-class cnn_mnist:
+class CNNMNSIT:
     
     def __init__(self):
         self.batch_size = 64
@@ -141,5 +141,3 @@ class cnn_mnist:
         self.evaluation()
         self.prediction()
         
-cnn_test = cnn_mnist()
-cnn_test.load_and_test('cnn_tf.model.best.hdf5')
