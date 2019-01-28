@@ -4,7 +4,7 @@ I have developed an Image Classifier using CNNs for classifying mnsit fashion da
 
 File <B>cnn_tf.py</B> contain code for loading mnsit_fashion data, training on it and testing it. <B>create_model(self)</B> function contain the code to create model and compile it as provided below. 
 
-    class cnn_mnist:
+    class CNNMNSIT:
       def __init__(self):
           self.batch_size = 64
           self.epochs = 20
@@ -61,8 +61,8 @@ Function <B> load_and_test(model_file) </B> will load test data and load model s
         
 Import cnn_mnsit module and train/test it using following code - 
 
-    from cnn_tf import cnn_mnsit
-    cnn_test = cnn_mnist()
+    from cnn_tf import CNNMNSIT
+    cnn_test = CNNMNSIT()
     cnn_test.train_and_save()
     model_file_name = cnn_test.model_file
     cnn_test.load_and_test(model_file_name)
