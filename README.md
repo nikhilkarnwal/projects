@@ -14,5 +14,7 @@ Every content saved through this application will be encrypted and saved into a 
 - <B><a href='semantic_segmentation_deeplearning_BSDS_dataset.ipynb'>Semantic Segmentation</a></B>
 - <B><a href='deeplearning_101(MNSIT%20using%20Pytorch).ipynb'>MNSIT Digits classification using PyTorch in GPU</a></B>
 
+Check my blog for detailed explaination about each of them at <B><a href='https://alquarizm.wordpress.com/'>Alquarizm</a></B>
+  
 Please shoot a mail for any discussion.
 nikhilkarnwal93@gmail.com
