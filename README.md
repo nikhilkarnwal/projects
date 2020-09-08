@@ -8,9 +8,9 @@ This is an android application for securly saving any content localy through thi
 Every content saved through this application will be encrypted and saved into a file. This file can be shared accross gmail or any other medium and can be accessed/ decrypted either throgh this app or independently using the same password (and decryption algorithm independently).
 
 # Machine Learning 
-- <B><a href='./CNN'>Image Classification using CNNs and tensorflow library</a></B>
-- <B><a href='./query_clustering'>Autonomous Query Clustering using DBSCAN</a></B>
-- <B><a href='./transfer_learning'>Transfer Learning</a></B>
+- <B><a href='https://github.com/nikhilkarnwal/projects/tree/master/machine_learning/CNN'>Image Classification using CNNs and tensorflow library</a></B>
+- <B><a href='https://github.com/nikhilkarnwal/projects/tree/master/machine_learning/query_clustering'>Autonomous Query Clustering using DBSCAN</a></B>
+- <B><a href='https://github.com/nikhilkarnwal/projects/tree/master/machine_learning/transfer_learning'>Transfer Learning</a></B>
 - <B><a href='semantic_segmentation_deeplearning_BSDS_dataset.ipynb'>Semantic Segmentation</a></B>
 - <B><a href='deeplearning_101(MNSIT%20using%20Pytorch).ipynb'>MNSIT Digits classification using PyTorch in GPU</a></B>
 
